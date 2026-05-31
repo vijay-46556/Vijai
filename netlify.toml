@@ -1,8 +1,7 @@
 [build]
-  command = "npm install --legacy-peer-deps && CI= npm run build"
+  command = "npm install --legacy-peer-deps && DISABLE_ESLINT_PLUGIN=true SKIP_PREFLIGHT_CHECK=true CI= npm run build"
   publish = "build"
 
 [build.environment]
   NODE_VERSION = "18.20.4"
   NPM_FLAGS = "--legacy-peer-deps"
-  SKIP_PREFLIGHT_CHECK = "true"
