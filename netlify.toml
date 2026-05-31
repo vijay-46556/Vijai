@@ -1,8 +1,7 @@
 [build]
-  command = "rm -rf node_modules package-lock.json && npm install --legacy-peer-deps && npm run build"
+  command = "npm install --legacy-peer-deps && CI= npm run build"
   publish = "build"
 
 [build.environment]
   NODE_VERSION = "18.20.4"
-  CI = "false"
   NPM_FLAGS = "--legacy-peer-deps"
