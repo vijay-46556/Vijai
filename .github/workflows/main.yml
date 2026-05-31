@@ -16,8 +16,10 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Dependencies
-        run: npm install --legacy-peer-deps
+  - name: Install Dependencies
+  run: |
+    npm install --legacy-peer-deps
+    npm install ajv@^8.0.0 --legacy-peer-deps
 
       - name: Build
         run: npm run build
