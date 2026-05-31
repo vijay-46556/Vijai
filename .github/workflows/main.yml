@@ -7,27 +7,26 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
     steps:
       - uses: actions/checkout@v4
-
+      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
-  - name: Install Dependencies
-  run: |
-    npm install --legacy-peer-deps
-    npm install ajv@^8.0.0 --legacy-peer-deps
-
+          
+      - name: Install Dependencies
+        run: |
+          npm install --legacy-peer-deps
+          npm install ajv@^8.0.0 --legacy-pee
+          
       - name: Build
         run: npm run build
         env:
           CI: false
-
+          
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          github_token: ${{ secrets.GITHUB_TO
+          publish_dir: ./build
